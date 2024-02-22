@@ -1,0 +1,48 @@
+# Image that contain latest nodejs and firebase tools
+# https://hub.docker.com/r/kszyrvercobrador/firedock
+
+image: kszyrvercobrador/firedock
+
+variables:
+  # Staging variables
+  ENV_STAGING: $ENV_STAGING
+  FIREBASE_PROJECT_NAME_STAGING: 'admincms-appetiser-staging'
+  FIREBASE_TOKEN_STAGING: $FIREBASE_TOKEN_STAGING
+  # Production variables
+  ENV_PRODUCTION: $ENV_PRODUCTION
+  FIREBASE_PROJECT_NAME_PRODUCTION: 'admincms-appetiser'
+  FIREBASE_TOKEN_PRODUCTION: $FIREBASE_TOKEN_PRODUCTION
+
+stages:
+  - deploy
+
+# This folder is cached between builds
+# http://docs.gitlab.com/ce/ci/yaml/README.html#cache
+cache:
+  paths:
+    - node_modules/
+  key: "$CI_BUILD_REPO"
+
+staging:
+  stage: deploy
+  script:
+    - cat $ENV_STAGING > .env.staging
+    - yarn install
+    - yarn build --mode staging
+    - firebase use $FIREBASE_PROJECT_NAME_STAGING --token $FIREBASE_TOKEN_STAGING
+    - firebase deploy --only hosting -m "Pipe $CI_PIPELINE_ID Build $CI_BUILD_ID" --token $FIREBASE_TOKEN_STAGING
+  when: manual
+  only:
+    - develop
+
+production:
+  stage: deploy
+  script:
+    - cat $ENV_PRODUCTION > .env.production
+    - yarn install
+    - yarn build --mode production
+    - firebase use $FIREBASE_PROJECT_NAME_PRODUCTION --token $FIREBASE_TOKEN_PRODUCTION
+    - firebase deploy --only hosting -m "Pipe $CI_PIPELINE_ID Build $CI_BUILD_ID" --token $FIREBASE_TOKEN_PRODUCTION
+  when: manual
+  only:
+    - master

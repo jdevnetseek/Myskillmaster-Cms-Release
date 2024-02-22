@@ -1,0 +1,14 @@
+.v-data-table table tbody tr {
+  &:first-child {
+      td {
+          padding-top: 20px !important;
+          padding-bottom:  10px !important;;
+      }
+  }
+  &:not(:first-child) {
+    td {
+        padding-top:  10px !important;
+        padding-bottom:  10px !important;
+    }
+  }
+}

@@ -1,0 +1,39 @@
+/* ==========================================================================
+  Builds our style structure
+  https://sass-guidelin.es/#the-7-1-pattern
+    
+  Table of Contents:
+    1. Abstract
+    2. Base
+    3. Components
+    4. Layouts
+    5. Pages
+    6. Themes
+    7. Vendor
+========================================================================== */
+
+// 1. Abstract
+@import './base/variables';
+
+// 2. Base
+@import './base/elements';
+@import './base/fonts';
+@import './base/helpers';
+@import './base/datatable';
+
+// 3. Components
+@import './components/layouts';
+@import './components/label';
+@import "components/avatar-form";
+
+// 4. Layouts
+
+// 5. Pages
+@import './pages/users';
+@import './pages/user-details';
+@import './pages/auth';
+
+// 6. Themes
+
+// 7. Vendor
+@import './vendor/vuetify';

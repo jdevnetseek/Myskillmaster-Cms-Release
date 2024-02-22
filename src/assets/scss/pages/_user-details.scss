@@ -1,0 +1,13 @@
+.v-tabs.user-info-tabs {
+  .v-tab {
+    color: $primary !important;
+    text-transform: capitalize;
+    font-size: 1rem;
+    letter-spacing: inherit;
+  }
+
+  .v-tab.v-tab--active {
+    color: $black !important;
+    font-weight: bold !important;
+  }
+}

@@ -1,0 +1,73 @@
+// import css plugins for vuetify
+@import '~tiptap-vuetify/dist/main.css';
+
+// import vuetify styles
+@import '~vuetify/src/styles/main.sass';
+@import '~vuetify/src/components/VBtn/VBtn.sass';
+
+.theme--light.v-application {
+  background: #fff !important;
+}
+
+.theme--light.v-navigation-drawer {
+  background-color: #f6f8fa !important;
+}
+
+.theme--light.v-data-table tbody tr:not(:last-child) td:not(.v-data-table__mobile-row) {
+  border-bottom: none !important;
+}
+
+.theme--light.v-data-table thead tr th {
+  font-size: 1rem;
+  color: $black !important;
+  padding-left: 0;
+}
+
+.v-data-table td {
+  font-size: 1rem;
+  padding-left: 4px;
+  color: $darkGrey;
+}
+
+.theme--light.v-input:not(.v-input--is-disabled) input,
+.theme--light.v-input:not(.v-input--is-disabled) textarea {
+  color: $black !important;
+  border-radius: 8px !important;
+  padding-left: 8px !important;
+}
+
+.theme--light.v-input.search:not(.v-input--is-disabled) input {
+    padding-left: 0px !important;
+}
+
+.v-avatar--tile {
+  border-radius: 8px !important;
+}
+
+.theme--light.v-data-table tbody tr:hover:not(.v-data-table__expanded__content) {
+  background: inherit;
+}
+
+.v-btn {
+  text-transform: capitalize !important;
+}
+
+.theme--light.v-data-table tbody tr:hover:not(.v-data-table__expanded__content) {
+  background: inherit !important;
+}
+
+.v-toolbar__title.breadcrumbs {
+  font-size: 1rem !important;
+
+  a {
+    color: $primary !important;
+  }
+}
+
+.theme--light.v-text-field--solo>.v-input__control>.v-input__slot {
+  background-color: #F1F3F4 !important;
+}
+
+.v-btn__content {
+  letter-spacing: initial;
+}

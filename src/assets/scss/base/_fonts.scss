@@ -1,0 +1,33 @@
+// import external assets
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("~@/assets/fonts/Inter-Regular.woff2") format("woff2"),
+    url("~@/assets/fonts/Inter-Regular.woff") format("woff");
+}
+
+.font-playfair {
+  font-family: 'Playfair Display';
+}
+
+.font-inter {
+  font-family: 'Inter';
+}
+
+.text-light-blue {
+  color: $lightBlue !important;
+}
+
+.text-light-grey {
+  color: $lightGrey !important;
+}
+
+.text-primary {
+  color: $primary !important;
+}

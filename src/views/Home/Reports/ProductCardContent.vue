@@ -1,0 +1,38 @@
+<template>
+  <v-card-text>
+    <v-row>
+      <v-col
+        v-for="photo in report.reportable.photos"
+        :key="photo.id"
+        class="d-flex child-flex"
+        cols="4"
+      >
+        <v-img
+          :src="photo.url"
+          :lazy-src="photo.url"
+          aspect-ratio="1"
+          class="grey lighten-2"
+        >
+          <template v-slot:placeholder>
+            <v-row class="fill-height ma-0" align="center" justify="center">
+              <v-progress-circular
+                indeterminate
+                color="grey lighten-5"
+              ></v-progress-circular>
+            </v-row>
+          </template>
+        </v-img>
+      </v-col>
+    </v-row>
+    <div class="font-weight-bold">
+      <div>Title: {{ report.reportable.title }}</div>
+      <div>Description: {{ report.reportable.description }}</div>
+      <div>Price: {{ report.reportable.formatted_price }}</div>
+    </div>
+  </v-card-text>
+</template>
+<script>
+export default {
+  props: ['report'],
+}
+</script>
